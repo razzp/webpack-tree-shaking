@@ -13,10 +13,10 @@ module.exports = ({ runtimeChunk }) => ({
         path: path.resolve(__dirname, 'dist'),
     },
     optimization: {
-        runtimeChunk: runtimeChunk === '0' ? false : 'single'
+        runtimeChunk: runtimeChunk === '0' ? false : 'single',
     },
     plugins: [
         new CleanWebpackPlugin(),
-        //new BundleAnalyzerPlugin()
+        //new BundleAnalyzerPlugin(),
     ]
 });
