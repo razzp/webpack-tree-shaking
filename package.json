@@ -3,7 +3,8 @@
     "name": "webpack-tree-shaking",
     "private": true,
     "scripts": {
-        "build": "webpack --config webpack.prod.js --progress"
+        "build:runtime-false": "webpack --env runtimeChunk=0 --config webpack.config.js --progress",
+        "build:runtime-single": "webpack --env runtimeChunk=1 --config webpack.config.js --progress"
     },
     "devDependencies": {
         "clean-webpack-plugin": "^4.0.0-alpha.0",

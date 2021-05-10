@@ -2,7 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 //const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-module.exports = {
+module.exports = ({ runtimeChunk }) => ({
     mode: 'production',
     entry: {
         a: './src/a.js',
@@ -13,10 +13,10 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
     },
     optimization: {
-        runtimeChunk: 'single'
+        runtimeChunk: runtimeChunk === '0' ? false : 'single'
     },
     plugins: [
         new CleanWebpackPlugin(),
         //new BundleAnalyzerPlugin()
     ]
-};
+});
